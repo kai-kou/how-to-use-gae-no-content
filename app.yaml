@@ -1,0 +1,13 @@
+runtime: python37
+env: standard
+service: [GAE-ServiceName]
+entrypoint: gunicorn -b :$PORT app:app --log-level DEBUG
+
+runtime_config:
+  python_version: 3
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
